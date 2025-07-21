@@ -33,7 +33,7 @@ void identify(Base* p) {
 	else if (dynamic_cast<C*>(p))
 		std::cout << "C" << std::endl;
 	else
-		std::cout << "invalid Class" << std::endl;
+		std::cout << "Error: invalid Class" << std::endl;
 }
 
 class D : public Base{

@@ -9,8 +9,7 @@ int	main()
 	identify(p);
 	identify(*p);
 
-	std::cout << std::endl;
-
+	std::cout << std::endl << "------- A,B,Cではないクラス ---------" << std::endl;
 	Base* base = new Base;
 	identify(base);
 	identify(*base);
