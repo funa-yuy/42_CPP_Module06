@@ -20,15 +20,14 @@
 
 class ScalarConverter {
 	public:
+		static void	convert(const std::string& str);
+
+	private:
 		ScalarConverter();
 		ScalarConverter(const std::string& name, int grade);
 		ScalarConverter& operator=(const ScalarConverter& copy);
 		ScalarConverter(const ScalarConverter& copy);
 		~ScalarConverter();
-
-		static void	convert(const std::string& str);
-
-	private:
 };
 
 // ------------------------------------------------
