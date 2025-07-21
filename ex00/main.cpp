@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 // 	const char* text;
 // };
 
+// #include <float.h>
 // int main(void)
 // {
 // 	TestCase test[] = {
@@ -36,16 +37,6 @@ int main(int argc, char *argv[])
 // 		{"1.2.3", "invalid"},
 // 		{"", "invalid"},
 // 		{"-+-1", "invalid"},
-// 		{"127", "int (char max)"},
-// 		{"128", "int (char max + 1)"},
-// 		{"2147483647", "int max"},
-// 		{"-2147483648", "int min"},
-// 		{"2147483648", "int max + 1"},
-// 		{"-2147483649", "int min - 1"},
-// 		{"3.4e49", "float overflow"},
-// 		{"3.4e-49", "float underflow"},
-// 		{"1e400", "double overflow"},
-// 		{"1e-400", "double underflow"},
 // 	};
 // 	size_t test_count = sizeof(test) / sizeof(test[0]);
 // 	for (size_t i = 0; i < test_count; ++i) {
