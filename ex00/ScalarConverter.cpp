@@ -29,8 +29,8 @@ ScalarConverter::~ScalarConverter() {}
 
 // ↑↑↑ Orthodox Canonical Form --------------------------------------
 
-bool	is_displayable_char(double num) {
-	return (num >= 0 && num <= 127 && std::isprint(num));
+bool	within_char_range(double num) {
+	return (num >= 0 && num <= 127);
 }
 
 bool	within_int_range(double num) {
@@ -54,10 +54,15 @@ void	convertStrToScalar(const std::string& str) {
 	std::cout << std::fixed << std::setprecision(1);
 
 	//char変換
-	if (is_displayable_char(value))
-		std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
+	if (within_char_range(value))
+	{
+		if (std::isprint(value))
+			std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
+		else
+			std::cout << "char: Non displayable" << std::endl;
+	}
 	else
-		std::cout << "char: Non displayable" << std::endl;
+		std::cout << "char: impossible" << std::endl;
 
 	//int変換
 	if (within_int_range(value))

@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 
 // struct TestCase {
 // 	const char* value;
-// 	const char* description;
+// 	const char* text;
 // };
 
 // int main(void)
@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
 // 	TestCase test[] = {
 // 		{"a", "char"},
 // 		{"Z", "char"},
+// 		{"!", "char"},
 // 		{"0", "int"},
 // 		{"42", "int"},
 // 		{"-42", "int"},
@@ -34,16 +35,13 @@ int main(int argc, char *argv[])
 // 		{"42abc", "invalid"},
 // 		{"1.2.3", "invalid"},
 // 		{"", "invalid"},
-// 		{" ", "invalid"},
-// 		{"!", "char"},
-// 		{"f", "char"},
+// 		{"-+-1", "invalid"},
 // 		{"127", "int (char max)"},
+// 		{"128", "int (char max + 1)"},
 // 		{"2147483647", "int max"},
 // 		{"-2147483648", "int min"},
 // 		{"2147483648", "int max + 1"},
 // 		{"-2147483649", "int min - 1"},
-// 		{"128", "int (overflow char)"},
-// 		{"256", "int (overflow char)"},
 // 		{"3.4e49", "float overflow"},
 // 		{"3.4e-49", "float underflow"},
 // 		{"1e400", "double overflow"},
@@ -51,7 +49,7 @@ int main(int argc, char *argv[])
 // 	};
 // 	size_t test_count = sizeof(test) / sizeof(test[0]);
 // 	for (size_t i = 0; i < test_count; ++i) {
-// 		std::cout << "----- Test: \"" << test[i].value << "\" " << test[i].description << " -----" << std::endl;
+// 		std::cout << "\x1b[33m----- Test: \"" << test[i].value << "\" " << test[i].text << " -----\x1b[39m" << std::endl;
 // 		ScalarConverter::convert(test[i].value);
 // 		std::cout << std::endl;
 // 	}
